@@ -6,7 +6,7 @@ Data Analyst &amp; AI Portfolio – Projects, Certifications, Machine Learning M
 Welcome to my professional portfolio! This website showcases my journey as a Data Analyst, featuring projects that solve real-world problems using Python, Machine Learning, NLP, and Power BI.
 
 ## 🌐 Live Demo
-Click Here to View My Portfolio Website
+ https://haru9266.github.io/data-analyst-portfolio/.
 
 ## 🛠️ Tech Stack Used
 Frontend: HTML5, CSS3, JavaScript (Vanilla JS)
