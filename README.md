@@ -56,4 +56,7 @@ LinkedIn: www.linkedin.com/in/pooja-kumari-079b5625a
 Email: poojak110059@gmail.com 
 
 Location: Delhi, India (Open to Relocation to South Korea & Japan)
+
+
+
     
