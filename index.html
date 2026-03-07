@@ -635,7 +635,34 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    (function () {
+        emailjs.init("jiUw1wmKNPePFdP-9");
+      })();
+
+      function sendMail(event) {
+        event.preventDefault();
+
+        const btn = document.querySelector('.btn-send');
+        btn.textContent = 'Sending...';
+
+        emailjs
+          .sendForm("service_uypwghj", "template_gluim0r", "#contact-form")
+          .then(
+            function (response) {
+              alert("Message Sent Successfully!");
+              document.getElementById("contact-form").reset();
+              btn.textContent = 'Send Message';
+            },
+            function (error) {
+              alert("Failed to send message.");
+              btn.textContent = 'Send Message';
+            },
+          );
+      }
+    </script>
 </body>
 
 
 </html>
+
