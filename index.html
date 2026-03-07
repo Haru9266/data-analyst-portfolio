@@ -634,36 +634,56 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- EmailJS Configuration and sendMail function -->
     <script>
+      // Initialize EmailJS with your public key
       (function () {
         emailjs.init("jiUw1wmKNPePFdP-9");
       })();
 
+      // Function to send email when form is submitted
       function sendMail(event) {
+        // Prevent the default form submission (page reload)
         event.preventDefault();
 
+        // Get the send button element
         const btn = document.querySelector('.btn-send');
+        
+        // Change button text to show sending status
         btn.textContent = 'Sending...';
 
-        emailjs
-          .sendForm("service_uypwghj", "template_gluim0r", "#contact-form")
-          .then(
-            function (response) {
-              alert("Message Sent Successfully!");
-              document.getElementById("contact-form").reset();
-              btn.textContent = 'Send Message';
-            },
-            function (error) {
-              alert("Failed to send message.");
-              btn.textContent = 'Send Message';
-            },
-          );
+        // Send form data using EmailJS
+        // Parameters: serviceID, templateID, formElement
+        emailjs.sendForm(
+          "service_uypwghj",    // Your EmailJS Service ID
+          "template_gluim0r",   // Your EmailJS Template ID
+          document.getElementById("contact-form")  // The form element
+        )
+        .then(
+          function (response) {
+            // Success: Show success message
+            alert("Message Sent Successfully!");
+            // Reset the form
+            document.getElementById("contact-form").reset();
+            // Reset button text
+            btn.textContent = 'Send Message';
+          },
+          function (error) {
+            // Error: Show error message
+            alert("Failed to send message.");
+            // Reset button text
+            btn.textContent = 'Send Message';
+          },
+        );
       }
     </script>
 </body>
 
 
 </html>
+
 
 
