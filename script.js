@@ -114,7 +114,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Initialize reveal elements
-const revealElements = document.querySelectorAll('.home-container, .about-container, .skills-container, .projects-container, .contact-content');
+const revealElements = document.querySelectorAll('.about-container, .skills-container, .projects-container, .contact-content');
 revealElements.forEach(el => el.classList.add('reveal'));
 
 // Create back to top button
@@ -233,27 +233,7 @@ if (typingElement) {
 	});
 }
 
-// Form submission
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-	contactForm.addEventListener('submit', function (e) {
-		e.preventDefault();
-
-		// Get form values
-		const name = this.user_name.value;
-		const email = this.user_email.value;
-		const message = this.message.value;
-
-		// Simple validation
-		if (name && email && message) {
-			// In a real application, you would send this data to a server
-			alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-			this.reset();
-		} else {
-			alert('Please fill in all fields.');
-		}
-	});
-}
+// Form submission is handled by EmailJS in index.html
 
 // Smooth scrolling for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
