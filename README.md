@@ -28,7 +28,7 @@ Insight: Analyzed 1,400+ Sephora products to map ingredient efficacy against pri
 Dashboard: Integrated Power BI for interactive market trend analysis.
 
 2. Telco Customer Churn Prediction
-Focus: Predictive Modeling & Business ROI.
+Focus: Predictive Modeling & Business ROI.  
 
 Insight: Built a Machine Learning model to identify at-risk customers with high accuracy.
 
