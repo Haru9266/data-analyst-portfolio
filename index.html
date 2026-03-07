@@ -569,7 +569,7 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
         </div>
     </section>
 
-    <!-- Contact Section -->
+     <!-- Contact Section -->
     <section class="contact" id="contact">
         <p class="section-tag">CONTACT</p>
         <h1>Get in Touch</h1>
@@ -583,10 +583,6 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
                         <i class="fas fa-envelope"></i>
                         <span>poojak110059@gmail.com</span>
                     </div>
-                    <!---<div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 98765 43210</span>
-                    </div>--->
                     <div class="contact-item">
                         <i class="fas fa-location-dot"></i>
                         <span>New Delhi, India</span>
@@ -598,7 +594,8 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contact-form">
+                <!-- onsubmit moved to form element - correct placement -->
+                <form id="contact-form" onsubmit="sendMail(event)">
                     <div class="form-group">
                         <input type="text" placeholder="Your Name" required name="user_name">
                     </div>
@@ -634,6 +631,8 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
         </div>
     </footer>
 
+     <script src="script.js"></script>
+    
     <!-- EmailJS Library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     
@@ -684,6 +683,7 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
 
 
 </html>
+
 
 
 
