@@ -1020,7 +1020,7 @@ hr {
     font-size: 1rem;
     transition: border 0.3s;
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(42, 138, 155);
+    color: #ffffff;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -2825,3 +2825,31 @@ hr {
         padding-right: 15px;
     }
 }
+
+/* Tablet Specific */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home { margin: 100px 60px 0; }
+    .about { margin: 80px 60px; padding: 40px; }
+    .projects { margin: 80px 60px; padding: 40px; }
+    .skills { margin: 80px 60px; padding: 40px; }
+    .certifications { margin: 80px 60px; padding: 40px; }
+    .contact { margin: 80px 60px; padding: 40px; }
+    
+    .projects-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .project-card { max-width: 100%; }
+    .project-content { padding: 20px; }
+    .project-content h3 { font-size: 1.3rem; }
+    .project-description { font-size: 0.9rem; }
+    
+    .card { flex-wrap: wrap; gap: 15px; }
+    .c1 { flex: 1 1 280px; padding: 20px 15px; }
+    
+    .skills-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    
+    .certifications-container { gap: 20px; flex-wrap: wrap; }
+    .certificate-card { max-width: 350px; width: 100%; }
+    .certificate-content { padding: 20px; }
+    
+    .contact-content { gap: 30px; }
+}
+
