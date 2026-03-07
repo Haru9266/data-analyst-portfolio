@@ -178,3 +178,14 @@ if (hireMeBtn) {
 
 // View CV button functionality - Link opens directly via HTML href
 // No JavaScript needed - the anchor tag handles it
+
+			window.scrollTo({
+				top: targetPosition,
+				behavior: 'smooth'
+			});
+		
+	
+
+
+// View CV button functionality - Link opens directly via HTML href
+// No JavaScript needed - the anchor tag handles it
