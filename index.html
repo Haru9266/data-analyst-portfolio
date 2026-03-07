@@ -633,56 +633,80 @@ Retinol commands the highest premium (Avg. $69), while Salicylic Acid offers the
 
      <script src="script.js"></script>
     
+    <script src="script.js"></script>
     <!-- EmailJS Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
-    <!-- EmailJS Configuration and sendMail function -->
-    <script>
-      // Initialize EmailJS with your public key
-      (function () {
-        emailjs.init("jiUw1wmKNPePFdP-9");
-      })();
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-      // Function to send email when form is submitted
-      function sendMail(event) {
+<!-- EmailJS Configuration and sendMail function -->
+<script>
+    // Initialize EmailJS with your public key
+    (function() {
+        emailjs.init("sB4j6iqdzhhYnlHoi"); // Your correct public key
+    })();
+
+    function sendMail(event) {
         // Prevent the default form submission (page reload)
         event.preventDefault();
 
+        // Get the form element
+        const form = document.getElementById("contact-form");
+        
         // Get the send button element
         const btn = document.querySelector('.btn-send');
         
+        // Get form values
+        const name = form.user_name.value;
+        const email = form.user_email.value;
+        const message = form.message.value;
+        
+        // Validate form
+        if (!name || !email || !message) {
+            alert("Please fill in all fields");
+            return;
+        }
+        
         // Change button text to show sending status
         btn.textContent = 'Sending...';
+        btn.disabled = true; // Disable button to prevent multiple submissions
 
-        // Send form data using EmailJS
-        // Parameters: serviceID, templateID, formElement
-        emailjs.sendForm(
-          "service_uypwghj",    // Your EmailJS Service ID
-          "template_gluim0r",   // Your EmailJS Template ID
-          document.getElementById("contact-form")  // The form element
+        // Send form data using EmailJS with your correct IDs
+        emailjs.send(
+            "service_uypwghj",    // Your EmailJS Service ID
+            "template_gluim0r",   // Your EmailJS Template ID
+            {
+                user_name: name,      // This should match your template variable
+                user_email: email,    // This should match your template variable  
+                message: message      // This should match your template variable
+            }
         )
         .then(
-          function (response) {
-            // Success: Show success message
-            alert("Message Sent Successfully!");
-            // Reset the form
-            document.getElementById("contact-form").reset();
-            // Reset button text
-            btn.textContent = 'Send Message';
-          },
-          function (error) {
-            // Error: Show error message
-            alert("Failed to send message.");
-            // Reset button text
-            btn.textContent = 'Send Message';
-          },
+            function(response) {
+                // Success: Show success message
+                alert("Message Sent Successfully!");
+                // Reset the form
+                document.getElementById("contact-form").reset();
+                // Reset button
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+                console.log('SUCCESS!', response.status, response.text);
+            },
+            function(error) {
+                // Error: Show error message
+                alert("Failed to send message. Please try again.");
+                // Reset button
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+                console.log('FAILED...', error);
+            }
         );
-      }
-    </script>
+    }
+</script>
+
 </body>
 
 
 </html>
+
 
 
 
