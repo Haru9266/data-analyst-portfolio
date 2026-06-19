@@ -1,465 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pooja — Data Analyst & AI Enthusiast</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja Kumari — Data Analyst CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --navy:#0b1322;
+    --navy-soft:#16213a;
+    --sky:#1c7fb8;
+    --lilac:#7d5ba6;
+    --ink:#1d2333;
+    --ink-soft:#525a6e;
+    --line:#e3e6ee;
+    --paper:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Open Sans',sans-serif;
+    background:#eef0f6;
+    color:var(--ink);
+    padding:36px 16px;
+    line-height:1.55;
+  }
+  .cv-page{
+    max-width:850px;
+    margin:0 auto;
+    background:var(--paper);
+    box-shadow:0 10px 40px rgba(11,19,34,0.12);
+    border-radius:10px;
+    overflow:hidden;
+  }
+
+  /* ===== HEADER ===== */
+  .cv-header{
+    background:linear-gradient(135deg,var(--navy) 0%, var(--navy-soft) 60%, #1f2b4a 100%);
+    color:#fff;
+    padding:38px 44px 30px;
+    position:relative;
+  }
+  .cv-header::after{
+    content:"";
+    position:absolute; left:0; bottom:0; width:100%; height:4px;
+    background:linear-gradient(90deg,var(--sky),var(--lilac));
+  }
+  .cv-name{
+    font-family:'Playfair Display',serif;
+    font-size:2.3rem;
+    font-weight:600;
+    letter-spacing:0.3px;
+  }
+  .cv-role{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.02rem;
+    color:#bcd4e8;
+    margin-top:4px;
+    font-weight:500;
+    letter-spacing:0.3px;
+  }
+  .cv-contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 22px;
+    margin-top:18px;
+    font-size:0.84rem;
+    color:#dfe6f0;
+  }
+  .cv-contact span{display:flex;align-items:center;gap:7px;}
+  .cv-contact i{color:#7dd3fc;font-size:0.85rem;width:14px;}
+
+  /* ===== BODY ===== */
+  .cv-body{padding:32px 44px 40px;}
+  .cv-section{margin-bottom:26px;}
+  .cv-section:last-child{margin-bottom:0;}
+  .cv-section-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    color:var(--sky);
+    padding-bottom:8px;
+    margin-bottom:14px;
+    border-bottom:2px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .cv-section-title i{color:var(--lilac);font-size:0.85rem;}
+
+  .summary-text{font-size:0.93rem;color:var(--ink-soft);}
+
+  /* Education / Certification */
+  .edu-item{margin-bottom:12px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;}
+  .edu-title{font-weight:600;font-size:0.95rem;color:var(--ink);}
+  .edu-date{font-size:0.78rem;color:var(--ink-soft);font-style:italic;white-space:nowrap;}
+  .edu-sub{font-size:0.85rem;color:var(--lilac);font-weight:500;margin-top:1px;}
+  .edu-detail{font-size:0.83rem;color:var(--ink-soft);margin-top:3px;}
+
+  /* Projects */
+  .project-block{
+    margin-bottom:18px;
+    padding-bottom:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .project-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .project-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;}
+  .project-name{font-weight:700;font-size:0.97rem;color:var(--ink);}
+  .project-tag{font-size:0.74rem;color:#fff;background:var(--sky);padding:2px 9px;border-radius:20px;font-weight:600;letter-spacing:0.3px;}
+  .project-tools{font-size:0.8rem;color:var(--lilac);font-weight:600;margin-top:3px;}
+  .project-desc{font-size:0.87rem;color:var(--ink-soft);margin-top:6px;}
+  .project-link{font-size:0.78rem;margin-top:6px;display:inline-flex;align-items:center;gap:5px;color:var(--sky);text-decoration:none;font-weight:600;}
+  .project-link:hover{text-decoration:underline;}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .skill-group-title{font-size:0.8rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .skill-tag{
+    font-size:0.76rem;
+    padding:4px 10px;
+    background:#f1f3fa;
+    border:1px solid var(--line);
+    border-radius:20px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+  /* Languages / extra */
+  .extra-row{display:flex;flex-wrap:wrap;gap:24px;}
+  .extra-item{flex:1;min-width:180px;}
+  .extra-label{font-size:0.78rem;color:var(--ink-soft);}
+  .extra-value{font-size:0.9rem;font-weight:600;color:var(--ink);margin-top:2px;}
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .cv-page{box-shadow:none;border-radius:0;}
+    .no-print{display:none;}
+  }
+  @media (max-width:640px){
+    .cv-header,.cv-body{padding:26px 22px;}
+    .skills-grid{grid-template-columns:1fr;}
+    .cv-name{font-size:1.8rem;}
+  }
+
+  .print-btn{
+    display:block;
+    max-width:850px;
+    margin:0 auto 14px;
+    text-align:right;
+  }
+  .print-btn button{
+    background:var(--navy);
+    color:#fff;
+    border:none;
+    padding:9px 18px;
+    border-radius:6px;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.82rem;
+    font-weight:600;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+  }
+  .print-btn button:hover{background:var(--sky);}
+</style>
 </head>
 <body>
 
-    <div id="scroll-progress-bar"></div>
-    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+  <div class="print-btn no-print">
+    <button onclick="window.print()"><i class="fas fa-download"></i> Save / Print as PDF</button>
+  </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
-            <ul class="nav-list">
-                <li class="nav-item active"><i class="fas fa-house"></i><a href="#home">Home</a></li>
-                <li class="nav-item"><i class="fas fa-address-card"></i><a href="#about">About</a></li>
-                <li class="nav-item"><i class="fas fa-folder-open"></i><a href="#projects">Projects</a></li>
-                <li class="nav-item"><i class="fas fa-code"></i><a href="#skills">Skills</a></li>
-                <li class="nav-item"><i class="fas fa-certificate"></i><a href="#certifications">Certifications</a></li>
-                <li class="nav-item"><i class="fas fa-envelope"></i><a href="#contact">Contact</a></li>
-            </ul>
+  <div class="cv-page">
+
+    <!-- HEADER -->
+    <div class="cv-header">
+      <div class="cv-name">Pooja Kumari</div>
+      <div class="cv-role">Data Analyst &nbsp;|&nbsp; Python &middot; SQL &middot; Power BI &middot; Machine Learning</div>
+      <div class="cv-contact">
+        <span><i class="fas fa-envelope"></i> poojak110059@gmail.com</span>
+        <span><i class="fas fa-location-dot"></i> New Delhi, India</span>
+        <span><i class="fab fa-github"></i> github.com/Haru9266</span>
+        <span><i class="fab fa-linkedin"></i> linkedin.com/in/pooja-kumari-079b5625a</span>
+        <span><i class="fas fa-briefcase"></i> Immediate Joiner &middot; 3.5–5 LPA</span>
+      </div>
+    </div>
+
+    <div class="cv-body">
+
+      <!-- SUMMARY -->
+      <div class="cv-section">
+        <div class="cv-section-title"><i class="fas fa-user"></i> Profile Summary</div>
+        <p class="summary-text">Fresher Data Analyst with hands-on expertise in Python, SQL, Power BI, and Machine Learning. Completed a professional certification in Data Analytics &amp; Artificial Intelligence from Ducat Institute of AI, Noida, where I built 5 end-to-end real-world data projects — from data cleaning to dashboards to predictive models. Comfortable turning raw data into clear business insights for both technical and non-technical audiences.</p>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="cv-section">
+        <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education &amp; Certification</div>
+        <div class="edu-item">
+          <div class="edu-row">
+            <span class="edu-title">Data Analytics &amp; Artificial Intelligence — Certification</span>
+            <span class="edu-date">Apr 2025 – Feb 2026</span>
+          </div>
+          <div class="edu-sub">Ducat Institute of AI, Noida</div>
+          <div class="edu-detail">Python &middot; SQL &middot; Power BI &middot; Tableau &middot; Machine Learning &middot; Deep Learning (Basics) &middot; NLP &middot; Statistics</div>
         </div>
-    </header>
-
-    <!-- HOME -->
-    <section class="home" id="home">
-        <div class="home-container">
-            <div class="home-content">
-                <div class="info-home">
-                    <p class="home-tag">📍 New Delhi, India &nbsp;|&nbsp; Open to Relocation</p>
-                    <h1>Hi, I'm <span class="name-highlight">Pooja</span></h1>
-                    <h3 class="typing-effect"><span class="cursor">|</span></h3>
-                    <div class="info-p">
-                        <p>I turn <strong>raw data into real business decisions</strong> — using Python, SQL, Machine Learning &amp; Power BI.</p>
-                        <p>From 4.3 lakh e-commerce transactions to cosmetics pricing models — I build end-to-end data solutions that drive measurable impact.</p>
-                    </div>
-                    <div class="info-p2">
-                        <p><i class="fas fa-circle-check"></i> Available for Full-Time Roles — Immediate Joiner</p>
-                        <p><i class="fas fa-circle-check"></i> Delhi NCR &nbsp;·&nbsp; Noida &nbsp;·&nbsp; Gurgaon &nbsp;·&nbsp; Hyderabad</p>
-                    </div>
-                    <div class="btnn">
-                        <button class="btn-home1"><i class="fas fa-paper-plane"></i> Hire Me</button>
-                        <a href="cv.html" target="_blank" class="btn-home2"><i class="fas fa-eye"></i> View CV</a>
-                    </div>
-                    <div class="hhr"><hr></div>
-                </div>
-            </div>
-            <div class="profile-img-container">
-                <img src="my-photo.jpeg" alt="Pooja - Data Analyst" class="profile-img">
-            </div>
+        <div class="edu-item">
+          <div class="edu-row">
+            <span class="edu-title">B.A. (Fine Arts)</span>
+            <span class="edu-date">University of Delhi — School of Open Learning</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <p class="section-tag">ABOUT ME</p>
-        <div class="title">
-            <h1>Turning Data Into</h1>
-            <h1>Business Impact</h1>
+      <!-- PROJECTS -->
+      <div class="cv-section">
+        <div class="cv-section-title"><i class="fas fa-diagram-project"></i> Projects</div>
+
+        <div class="project-block">
+          <div class="project-row">
+            <span class="project-name">Bank Fraud Detection Analysis</span>
+            <span class="project-tag">Main Project</span>
+          </div>
+          <div class="project-tools">Python &middot; SQL (MySQL) &middot; Power BI &middot; Automation</div>
+          <div class="project-desc">Analyzed 6.3 million+ banking transactions to detect fraud patterns. Found fraud occurs only in CASH_OUT and TRANSFER transactions, and the bank's own system caught just 16 of 8,213 fraud cases. Wrote 20+ SQL queries with 3 views, built a Power BI dashboard, and automated a Python alert script that flags high-fraud periods and logs results in real time.</div>
+          <a class="project-link" href="https://github.com/Haru9266/Bank-fraud-detection-analysis" target="_blank"><i class="fab fa-github"></i> github.com/Haru9266/Bank-fraud-detection-analysis</a>
         </div>
-        <div class="hrrr"><hr></div>
-        <div class="about-container">
-            <div class="info-about">
-                <div class="about-info">
-                    <p>I am a <strong>fresher Data Analyst</strong> with hands-on expertise in Python, SQL, Machine Learning, Power BI, and Tableau. I completed my professional certification in <strong>Data Analytics &amp; Artificial Intelligence</strong> from Ducat Institute of AI, Noida (Feb 2026), where I built 6 end-to-end real-world data projects from scratch.</p>
-                    <p>My background in Arts from the <strong>University of Delhi</strong> gives me a unique edge — I understand both the human story behind the data and the technical precision needed to analyze it. This helps me communicate insights clearly to both technical teams and business stakeholders.</p>
-                    <p>I am also actively learning <strong>Japanese (JLPT N5)</strong> with a long-term goal of working as a Data Analyst in Japan or South Korea — applying my skills in global markets.</p>
-                </div>
-                <h2>What I Bring to the Table</h2>
-                <div class="card">
-                    <div class="c1">
-                        <h3><i class="fas fa-code"></i> Tech Stack</h3>
-                        <p>Python · SQL · Power BI · Tableau · Machine Learning · Excel</p>
-                    </div>
-                    <div class="c1">
-                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <p>BA — University of Delhi · Data Analytics &amp; AI — Ducat Institute</p>
-                    </div>
-                    <div class="c1">
-                        <h3><i class="fas fa-trophy"></i> Projects</h3>
-                        <p>5 end-to-end real-world data projects across E-Commerce, Healthcare, Real Estate &amp; Cosmetics</p>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <div class="stat-item"><h3>5+</h3><p>Real Projects</p></div>
-                <div class="stat-item"><h3>94%</h3><p>ML Model Accuracy</p></div>
-                <div class="stat-item"><h3>4.3L+</h3><p>Data Points Analyzed</p></div>
-                <div class="stat-item"><h3>N5</h3><p>Japanese (Learning)</p></div>
-            </div>
+
+        <div class="project-block">
+          <div class="project-row">
+            <span class="project-name">E-Commerce Sales Intelligence</span>
+          </div>
+          <div class="project-tools">Python &middot; Power BI &middot; Scikit-learn (Linear Regression)</div>
+          <div class="project-desc">Analyzed 4.2 lakh+ cleaned e-commerce transactions to uncover revenue trends. Found UK is the #1 revenue market (£42.1M) and November is the peak sales month. Built a Linear Regression model that predicts revenue with 94.66% accuracy (R²=0.9466).</div>
+          <a class="project-link" href="https://github.com/Haru9266/E-Commerce-Sales-Data-Analysis" target="_blank"><i class="fab fa-github"></i> github.com/Haru9266/E-Commerce-Sales-Data-Analysis</a>
         </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-        <p class="section-tag">PROJECTS</p>
-        <h1>Featured Work</h1>
-        <hr>
-        <div class="info-pro">
-            <p>5 end-to-end real-world data projects — from data cleaning to ML models to dashboards.</p>
-            <p>Each project delivers business insights, not just analysis.</p>
+        <div class="project-block">
+          <div class="project-row">
+            <span class="project-name">Airbnb NYC Listings Analysis</span>
+          </div>
+          <div class="project-tools">Python &middot; Power BI &middot; Geographic Analysis</div>
+          <div class="project-desc">Analyzed 49,000+ NYC Airbnb listings to study pricing and demand patterns. Found Manhattan commands premium pricing (avg ~$200/night) while Brooklyn leads in listing volume. Built an interactive Power BI dashboard with map visuals and KPI cards.</div>
+          <a class="project-link" href="https://github.com/Haru9266/Airbnb-NYC-Listings-Analysis-" target="_blank"><i class="fab fa-github"></i> github.com/Haru9266/Airbnb-NYC-Listings-Analysis-</a>
         </div>
-        <div class="projects-grid">
 
-            <!-- PROJECT 1 — E-COMMERCE -->
-            <div class="project-card featured-card">
-                <div class="project-content">
-                    <div class="glass-top-bar"></div>
-                    <h3 class="project-title">E-Commerce Sales Intelligence</h3>
-                    <p class="project-sub">UK Market · 4.3L Transactions · 94% ML Accuracy</p>
-                    <p class="project-description">Analyzed 4.2 lakh+ cleaned e-commerce transactions to uncover revenue trends and built a Linear Regression model to predict revenue with 94.66% accuracy.</p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <strong>Key Insight</strong>
-                            United Kingdom is the #1 revenue market (£42.1M). November 2019 was the peak sales month (festive season). Best-selling product: "Paper Craft Little Birdie" — 80,995 units sold. Linear Regression model predicts revenue with 94.66% accuracy (R²=0.9466).
-                        </div>
-                        <div class="detail-item">
-                            <strong>What I Did</strong>
-                            Cleaned 4.3L+ rows (removed duplicates, nulls, returns), engineered Revenue/Month/DayOfWeek features, ran EDA across countries &amp; products, trained &amp; evaluated a Linear Regression model.
-                        </div>
-                        <div class="detail-item">
-                            <strong>Business Impact</strong>
-                            Helps businesses identify top markets, plan inventory for peak seasons, prioritize high-revenue products.
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">NumPy</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Linear Regression</span>
-                    </div>
-                    <div class="project-btns">
-                        <a href="https://github.com/Haru9266/E-Commerce-Sales-Data-Analysis" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 2 — SEPHORA -->
-            <div class="project-card featured-card">
-                <div class="project-content">
-                    <div class="glass-top-bar"></div>
-                    <h3 class="project-title">GlowMetrics — Sephora Analysis</h3>
-                    <p class="project-sub">1,472 Products · NLP · Random Forest · Power BI</p>
-                    <p class="project-description">Decoded what actually drives luxury cosmetics pricing across 1,472 Sephora products — ingredients or brand power?</p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <strong>Key Insight</strong>
-                            Brand name drives price — not ingredients. R²=0.042 confirmed ingredients alone can't predict price. Retinol commands highest premium ($69 avg). Mid-range brands ($30–$60) have better ratings (4.5+).
-                        </div>
-                        <div class="detail-item">
-                            <strong>What I Did</strong>
-                            NLP (TextBlob) for ingredient analysis, outlier management, competitive benchmarking, Random Forest modeling, Power BI dashboard.
-                        </div>
-                        <div class="detail-item">
-                            <strong>Business Impact</strong>
-                            Data-driven pricing framework for beauty brands based on active ingredients — not just brand perception.
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLP (TextBlob)</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Seaborn</span>
-                        <span class="tech-tag">Random Forest</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Regex</span>
-                    </div>
-                    <div class="project-btns">
-                        <a href="https://github.com/Haru9266/Sephora-Cosmetics-Market-Analysis" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 3 — TELCO CHURN -->
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="glass-top-bar"></div>
-                    <h3 class="project-title">ChurnShield AI</h3>
-                    <p class="project-sub">Telecom Churn Prediction · Power BI Dashboard</p>
-                    <p class="project-description">ML-powered solution to predict telecom customer churn — helping companies identify at-risk customers before they leave.</p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <strong>Key Insight</strong>
-                            Fiber Optic users are the highest churn-risk segment. Built a classification model using customer usage patterns with a real-time Power BI Executive Dashboard.
-                        </div>
-                        <div class="detail-item">
-                            <strong>Business Impact</strong>
-                            Reduces revenue leakage by identifying at-risk customers early — enabling targeted retention offers before cancellation.
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">Power BI</span>
-                    </div>
-                    <div class="project-btns">
-                        <a href="https://github.com/Haru9266/Telco-Churn-AI-Prediction-Dashboard" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 4 — BANK FRAUD DETECTION -->
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="glass-top-bar"></div>
-                    <h3 class="project-title">Bank fraud detection analysis</h3>
-                    <p class="project-sub">6.3M+ Transactions · Python, SQL &amp; Power BI</p>
-                    <p class="project-description">End-to-end fraud detection system analyzing 6.3 million+ banking transactions — from raw data to automated fraud alerts.</p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <strong>Key Insight</strong>
-                            Fraud occurs only in CASH_OUT and TRANSFER transactions (8,213 cases, 0.13%). The bank's own flagging system caught just 16 of those 8,213 cases. 98% of fraud cases leave the account balance at zero — a strong red-flag pattern.
-                        </div>
-                        <div class="detail-item">
-                            <strong>What I Did</strong>
-                            Cleaned &amp; explored 6.3M+ rows in Python, wrote 20+ SQL queries with 3 views to isolate fraud patterns, built a Power BI dashboard, and automated a Python alert script that flags high-fraud periods in real time.
-                        </div>
-                        <div class="detail-item">
-                            <strong>Business Impact</strong>
-                            Highlights major gaps in the bank's existing fraud detection system and gives a low-cost, automated way to catch fraud earlier and reduce losses.
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">SQL (MySQL)</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Automation</span>
-                    </div>
-                    <div class="project-btns">
-                        <a href="https://github.com/Haru9266/Bank-fraud-detection-analysis" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 5 — AIRBNB NYC -->
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="glass-top-bar"></div>
-                    <h3 class="project-title">NYC Stay Insights</h3>
-                    <p class="project-sub">49K+ Listings · Python &amp; Power BI</p>
-                    <p class="project-description">Analyzed 49,000+ Airbnb listings across New York City to uncover pricing and demand patterns by borough.</p>
-                    <div class="project-details">
-                        <div class="detail-item">
-                            <strong>Key Insight</strong>
-                            Manhattan commands premium pricing (avg ~$200/night) while Brooklyn leads in total listing volume — showing a clear price-vs-supply trade-off across boroughs. Entire home/apt makes up 51% of all listings.
-                        </div>
-                        <div class="detail-item">
-                            <strong>What I Did</strong>
-                            Cleaned &amp; explored 49K+ rows in Python, analyzed pricing by neighbourhood and room type, and built an interactive Power BI dashboard with map visuals and KPI cards.
-                        </div>
-                        <div class="detail-item">
-                            <strong>Business Impact</strong>
-                            Helps hosts and investors decide where to list — premium pricing in Manhattan vs. higher listing volume and competition in Brooklyn.
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Geographic Analysis</span>
-                    </div>
-                    <div class="project-btns">
-                        <a href="https://github.com/Haru9266/Airbnb-NYC-Listings-Analysis-" target="_blank" class="btn"><i class="fab fa-github"></i> View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-
+        <div class="project-block">
+          <div class="project-row">
+            <span class="project-name">ChurnShield AI — Telecom Churn Prediction</span>
+          </div>
+          <div class="project-tools">Python &middot; Scikit-learn &middot; Power BI</div>
+          <div class="project-desc">Built a classification model to predict telecom customer churn. Found Fiber Optic users are the highest churn-risk segment. Built a real-time Power BI executive dashboard to track at-risk customers for targeted retention.</div>
+          <a class="project-link" href="https://github.com/Haru9266/Telco-Churn-AI-Prediction-Dashboard" target="_blank"><i class="fab fa-github"></i> github.com/Haru9266/Telco-Churn-AI-Prediction-Dashboard</a>
         </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
-        <p class="section-tag">SKILLS</p>
-        <h1>Technical Expertise</h1>
-        <hr>
-        <div class="skills-container">
-            <div class="skills-category">
-                <h3 class="skills-category-title">Programming &amp; Data</h3>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Python</span><span class="skill-percentage">90%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:90%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">SQL &amp; MySQL</span><span class="skill-percentage">85%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:85%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Pandas &amp; NumPy</span><span class="skill-percentage">88%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:88%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Excel (Advanced)</span><span class="skill-percentage">85%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:85%"></div></div>
-                </div>
-            </div>
-            <div class="skills-category">
-                <h3 class="skills-category-title">BI &amp; Visualization</h3>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Power BI &amp; DAX</span><span class="skill-percentage">85%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:85%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Tableau</span><span class="skill-percentage">80%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:80%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Matplotlib &amp; Seaborn</span><span class="skill-percentage">87%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:87%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Data Storytelling</span><span class="skill-percentage">85%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:85%"></div></div>
-                </div>
-            </div>
-            <div class="skills-category">
-                <h3 class="skills-category-title">AI &amp; Machine Learning</h3>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Machine Learning (Basics+)</span><span class="skill-percentage">75%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:75%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Deep Learning (Basics)</span><span class="skill-percentage">55%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:55%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">NLP (TextBlob &amp; Regex)</span><span class="skill-percentage">72%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:72%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-info"><span class="skill-name">Scikit-learn</span><span class="skill-percentage">78%</span></div>
-                    <div class="skill-bar"><div class="skill-bar-fill" style="--skill-percent:78%"></div></div>
-                </div>
-            </div>
+        <div class="project-block">
+          <div class="project-row">
+            <span class="project-name">GlowMetrics — Sephora Cosmetics Pricing</span>
+          </div>
+          <div class="project-tools">Python &middot; NLP (TextBlob) &middot; Random Forest &middot; Power BI</div>
+          <div class="project-desc">Analyzed 1,472 Sephora products to study what drives cosmetics pricing. Found brand name drives price more than ingredients (R²=0.042 for ingredients alone). Used NLP for ingredient analysis and Random Forest modeling, with a Power BI dashboard for results.</div>
+          <a class="project-link" href="https://github.com/Haru9266/Sephora-Cosmetics-Market-Analysis" target="_blank"><i class="fab fa-github"></i> github.com/Haru9266/Sephora-Cosmetics-Market-Analysis</a>
         </div>
-        <div class="skills-summary">
-            <h3>Currently Learning &amp; Growing</h3>
-            <div class="learning-items">
-                <div class="learning-item">
-                    <i class="fas fa-brain"></i>
-                    <div><span class="learning-title">Advanced Machine Learning</span><span class="learning-sub">Random Forest, XGBoost, Model Tuning</span></div>
-                </div>
-                <div class="learning-item">
-                    <i class="fas fa-network-wired"></i>
-                    <div><span class="learning-title">Deep Learning</span><span class="learning-sub">Neural Networks — basics &amp; building up</span></div>
-                </div>
-                <div class="learning-item">
-                    <i class="fas fa-database"></i>
-                    <div><span class="learning-title">Advanced SQL</span><span class="learning-sub">Window Functions, CTEs, Optimization</span></div>
-                </div>
-                <div class="learning-item">
-                    <i class="fas fa-language"></i>
-                    <div><span class="learning-title">日本語 — Japanese (JLPT N5)</span><span class="learning-sub">Actively learning — aiming for N4 next</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CERTIFICATIONS -->
-    <section class="certifications" id="certifications">
-        <p class="section-tag">CERTIFICATIONS</p>
-        <h1>Professional Certifications</h1>
-        <hr>
-        <div class="certifications-container">
-            <div class="certificate-card">
-                <div class="certificate-content">
-                    <h3>Data Analytics &amp; Artificial Intelligence</h3>
-                    <p class="certificate-organization">Ducat Institute of AI — Noida</p>
-                    <p class="certificate-duration">April 2025 – February 2026</p>
-                    <p class="certificate-skills">Python · SQL · Power BI · Tableau · Machine Learning · Deep Learning (Basics) · NLP · Data Visualization · Statistics</p>
-                    <a href="Certificate-Data-Analytics+AI.pdf" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> View Certificate</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-        <p class="section-tag">CONTACT</p>
-        <h1>Let's Work Together</h1>
-        <hr>
-        <div class="contact-content">
-            <div class="contact-info">
-                <p>I am actively seeking a full-time Data Analyst or MIS Executive role. I am an <strong>immediate joiner</strong> based in New Delhi — open to Delhi NCR, Noida, Gurgaon, and Hyderabad. Expected CTC: 3.5–5 LPA.</p>
-                <div class="contact-details">
-                    <div class="contact-item"><i class="fas fa-envelope"></i><span>poojak110059@gmail.com</span></div>
-                    <div class="contact-item"><i class="fas fa-location-dot"></i><span>New Delhi, India</span></div>
-                    <div class="contact-item"><i class="fas fa-briefcase"></i><span>Immediate Joiner · Full Time · 3.5–5 LPA</span></div>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/Haru9266" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/pooja-kumari-079b5625a" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
+      <!-- SKILLS -->
+      <div class="cv-section">
+        <div class="cv-section-title"><i class="fas fa-code"></i> Technical Skills</div>
+        <div class="skills-grid">
+          <div>
+            <div class="skill-group-title">Programming &amp; Data</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL / MySQL</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Excel</span>
             </div>
-            <div class="contact-form">
-                <form id="contact-form" onsubmit="sendMail(event)">
-                    <div class="form-group"><input type="text" placeholder="Your Name" required id="name"></div>
-                    <div class="form-group"><input type="email" placeholder="Your Email" required id="email"></div>
-                    <div class="form-group"><textarea placeholder="Your Message" rows="5" required id="message"></textarea></div>
-                    <button type="submit" class="btn-send"><i class="fas fa-paper-plane"></i> Send Message</button>
-                </form>
+          </div>
+          <div>
+            <div class="skill-group-title">BI &amp; Visualization</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Power BI &amp; DAX</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Seaborn</span>
             </div>
+          </div>
+          <div>
+            <div class="skill-group-title">AI &amp; Machine Learning</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Linear Regression</span>
+              <span class="skill-tag">Random Forest</span>
+              <span class="skill-tag">NLP (TextBlob)</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <h2 class="footer-logo">Pooja</h2>
-            <ul class="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="footer-social">
-                <a href="https://github.com/Haru9266" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/pooja-kumari-079b5625a" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-            <p class="footer-copy">&copy; 2026 Pooja. All Rights Reserved.</p>
+      <!-- EXTRA -->
+      <div class="cv-section">
+        <div class="cv-section-title"><i class="fas fa-circle-info"></i> Additional Information</div>
+        <div class="extra-row">
+          <div class="extra-item">
+            <div class="extra-label">Languages</div>
+            <div class="extra-value">English, Hindi, Japanese (JLPT N5 — Learning)</div>
+          </div>
+          <div class="extra-item">
+            <div class="extra-label">Open to Relocation</div>
+            <div class="extra-value">Delhi NCR · Noida · Gurgaon · Hyderabad</div>
+          </div>
+          <div class="extra-item">
+            <div class="extra-label">Availability</div>
+            <div class="extra-value">Immediate Joiner — Full Time</div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function(){ emailjs.init("sB4j6iqdzhhYnlHoi"); })();
-        function sendMail(event) {
-            event.preventDefault();
-            const btn = document.querySelector(".btn-send");
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-            if (!name || !email || !message) { alert("Please fill in all fields"); return; }
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
-            emailjs.send("service_uypwghj","template_gluim0r",{name,email,message})
-            .then(()=>{
-                alert("Message Sent Successfully!");
-                document.getElementById("contact-form").reset();
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-                btn.disabled = false;
-            },()=>{
-                alert("Failed to send. Please try again.");
-                btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-                btn.disabled = false;
-            });
-        }
-    </script>
+    </div>
+  </div>
+
 </body>
 </html>
