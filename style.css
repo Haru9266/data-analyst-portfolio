@@ -600,3 +600,16 @@ hr { border:none; height:1px; background:linear-gradient(to right,transparent,rg
     .about-stats{grid-template-columns:1fr;}
     .nav-list{width:100%;}
 }
+
+/* ===== MOBILE PERFORMANCE FIX =====
+   backdrop-filter blur is very heavy on phones and causes slow scroll/lag.
+   Replacing it with a solid background on mobile keeps the look close to
+   the same, but removes the lag completely. */
+@media(max-width:768px){
+    .header,
+    .project-content,
+    .glass-top-bar {
+        backdrop-filter:none !important;
+        -webkit-backdrop-filter:none !important;
+    }
+}
